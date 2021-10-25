@@ -1,7 +1,7 @@
 name: Parallel jobs
 on: [push]
 jobs:
-  build-and-test job1:
+  build-and-test-job1:
     runs-on: ubuntu-latest
     steps:
       - run: echo "this has been triggered ${{ github.event_name }} event"
@@ -22,7 +22,7 @@ jobs:
         run: |
           echo "Testing..."
       - run: echo "This job's status is ${{ job.status }}."
-  build-and-test job2:
+  build-and-test-job2:
     runs-on: ubuntu-latest
     steps:
       - run: echo "this has been triggered ${{ github.event_name }} event"
