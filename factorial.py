@@ -29,10 +29,10 @@ def factorial(n):
     OverflowError: n too large
     """
     time.sleep(.1)
-    if n < 0:
-        raise ValueError: ('n must be >= 0')
+    if n <= 0:
+        raise ValueError('n must be >= 0')
     if not isinstance(n, (int))
-        raise ValueError: ('n must be exact integer')
+        raise ValueError('n must be exact integer')
             
     factorial = 1
     for i in range(1, n+1):
