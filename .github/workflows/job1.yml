@@ -71,7 +71,3 @@ jobs:
       with:
         name: factorial.py
         path: factorial.py
-    - name: Style with pycodestyle
-      run: |
-        python --version
-        pycodestyle *.py
