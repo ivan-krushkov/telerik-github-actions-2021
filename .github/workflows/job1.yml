@@ -1,7 +1,7 @@
 name: Actions-Practice-2
 env:
   WORKSPACE_ENVIRONMENT_VARIABLE: 'custom workspace environment variable'
-on: [push]
+on: pull_request
 jobs:
   pre-build:
     env:
