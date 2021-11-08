@@ -39,7 +39,7 @@ jobs:
         python lint_test.py
   style:
     needs: pre-build
-    runs-on: ubuntu-lates
+    runs-on: ubuntu-latest
     steps:
     - name: Check out repository code
       uses: actions/checkout@v2
