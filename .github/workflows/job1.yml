@@ -93,14 +93,8 @@ jobs:
     - name: Unit testing
       run: |
         python3 -m doctest factorial.py
-  deploy:
-    needs: unit-test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Delpoy
-      run: echo "Deploy on production"
   SAST:
-#     needs: unit-test
+    needs: unit-test
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -111,3 +105,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  deploy:
+    needs: SAST
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delpoy
+      run: echo "Deploy on production"
