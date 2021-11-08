@@ -52,6 +52,25 @@ jobs:
         python --version
         python -m pip install --upgrade pip
         pip install pycodestyle
+  build:
+    needs: [style,lint]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository code
+      uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Build container
+      run: echo "Building container iamge"
+    - name: List disrectory
+      run: echo ls -la
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: factorial.py
+        path: factorial.py
     - name: Style with pycodestyle
       run: |
         python --version
