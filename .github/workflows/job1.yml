@@ -84,3 +84,9 @@ jobs:
     - name: Unit testing
       run: |
         python3 -m doctest factorial.py
+  deploy:
+    needs: unit-test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Delpoy
+      run: echo "Deploy on production"
